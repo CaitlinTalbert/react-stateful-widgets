@@ -37,13 +37,13 @@ STEP 6:
 import React, { useState } from "react"; /* STEP 0 */
 
 export default function Input() {
-  const [inputValue, setInputValue] = "";
+  const [inputValue, setInputValue] = useState("");
 
   const changeInput = (evt) => {
     // When the input changes, its whole value can be found inside the event object.
     // Log out the synthetic event object 'evt' and see for yourself.
     const { value } = evt.target;
-    console.log(evt.target.value);
+
     //this is the same as const value = evt.target.value;
     setInputValue(value);
   };
@@ -55,14 +55,13 @@ export default function Input() {
     fontSize: "1.5em",
     marginBottom: "0.3em",
     color: inputValue > 10 ? "crimson" : "royalblue",
-    /* STEP 2 Make the color of the text be crimson if the length of 'inputValue' goes over ten.*/
   };
 
   return (
     <div className="widget-input container">
       <h2>Input</h2>
       <div id="output" style={style}>
-        {inputValue.toUpperCase(inputValue)}
+        {inputValue.toUpperCase()}
       </div>
       {/* STEP 3 Interpolate the value of the input inside this <div />. How can we make it show in ALL CAPS?*/}
       <div>

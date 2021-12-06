@@ -64,17 +64,15 @@ export default function Counter() {
   const style = {
     fontSize: "1.5em",
     marginBottom: "0.3em",
-    color:
-      count % 2 === 0
-        ? "royalblue"
-        : "crimson" /* STEP 2 If count is even, then "royalblue", else "crimson".*/,
+    color: count % 2 === 0 ? "royalblue" : "crimson",
+    /* STEP 2 If count is even, then "royalblue", else "crimson".*/
   };
 
   return (
     <div className="widget-counter container">
       <h2>Counter</h2>
       <div id="count" style={style}>
-        Number {count} is {count === "even" ? "even" : "odd"}{" "}
+        Number {count} is {count % 2 === 0 ? "even" : "odd"}
         {/* STEP 3 replace the word "even" with a ternary: {if count is even number, then string "even", else string "odd"}.*/}
       </div>
       <div>
