@@ -46,38 +46,47 @@ STEP 6:
   This click handler needs to use 'setCount' to set the 'count' to be zero again.
 */
 
-import React, { useState } from 'react'; /* STEP 0 */
+import React, { useState } from "react"; /* STEP 0 */
 
 export default function Counter() {
-  const [count, setCount] = useState(0); 
-
+  const [count, setCount] = useState(0);
 
   const increment = () => {
-    setCount(count + 1)
+    setCount(count + 1);
   };
   const decrement = () => {
-    setCount(count - 1)
+    setCount(count - 1);
   };
   const reset = () => {
-    setCount(count === 0)
+    setCount(count === 0);
   };
 
   const style = {
-    fontSize: '1.5em',
-    marginBottom: '0.3em',
-    color: {count === 'even' ? 'royalblue' : 'crimson'}, /* STEP 2 If count is even, then "royalblue", else "crimson".*/
+    fontSize: "1.5em",
+    marginBottom: "0.3em",
+    color:
+      count % 2 === 0
+        ? "royalblue"
+        : "crimson" /* STEP 2 If count is even, then "royalblue", else "crimson".*/,
   };
 
   return (
-    <div className='widget-counter container'>
+    <div className="widget-counter container">
       <h2>Counter</h2>
-      <div id='count' style={style}>
-        Number {count} is {count === 'even' ? 'even' : 'odd'} {/* STEP 3 replace the word "even" with a ternary: {if count is even number, then string "even", else string "odd"}.*/}
+      <div id="count" style={style}>
+        Number {count} is {count === "even" ? "even" : "odd"}{" "}
+        {/* STEP 3 replace the word "even" with a ternary: {if count is even number, then string "even", else string "odd"}.*/}
       </div>
       <div>
-        <button id='increment' onClick={increment}>Increment</button>
-        <button id='decrement' onClick={decrement}>Decrement</button>
-        <button id='resetCount' onClick={reset}>Reset</button>
+        <button id="increment" onClick={increment}>
+          Increment
+        </button>
+        <button id="decrement" onClick={decrement}>
+          Decrement
+        </button>
+        <button id="resetCount" onClick={reset}>
+          Reset
+        </button>
       </div>
     </div>
   );
